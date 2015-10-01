@@ -1,44 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E7463E"
+    android:weightSum="7" >
 
-    <RelativeLayout
-        android:id="@+id/relativelayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="2" >
+          <fragment
+        android:id="@+id/map"     
+        android:layout_width="match_parent"        
+        android:layout_height="wrap_content" 
+        class="com.google.android.gms.maps.SupportMapFragment"/>
+    </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" >
-             <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/linearlayout"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/mainlogo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="4" >
+        
+        <!-- This is the Gallery -->
 
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center" >
+
+                 <Gallery 
+             android:id="@+id/gallery"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:gravity="center"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearlayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="19dp"
-            android:text="Designed and Developed: Naren"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+         
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_weight="1" >
+     <!-- This LinearLayout if for the dots -->
+     <LinearLayout 
+        		  android:id="@+id/image_count"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:gravity="center"
+                  android:background="#00000000"
+                  android:layout_weight="1">
+    </LinearLayout>
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          
+          android:orientation="vertical" >
+
+          <LinearLayout
+              android:id="@+id/linearLayout1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:weightSum="2" >
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" 
+    			  android:gravity="center"
+                  android:layout_weight="1" >
+                   
+
+		              <Button
+		                  android:id="@+id/button1"
+		                  android:layout_width="match_parent"
+		                  android:layout_height="match_parent"
+		                  android:layout_gravity="center_vertical|center_horizontal"
+		                  android:text="Clear My Data"
+		                  android:textStyle="bold" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" 
+   				  android:gravity="center"
+   				
+                  android:layout_weight="1" >
+
+                  <Switch
+                      android:id="@+id/switch1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:text="SOS" />
+
+		          
+              </LinearLayout>
+          </LinearLayout>
+          <LinearLayout
+              android:id="@+id/linearLayout2"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/linearLayout1"
+              android:weightSum="2" >
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" 
+    			  android:gravity="center"
+                  android:layout_weight="1" >
+                   
+
+		              <Button
+		                  android:id="@+id/share"
+		                  android:layout_width="wrap_content"
+		                  android:layout_height="wrap_content"
+		                  android:background="@drawable/share"
+		                  android:textStyle="bold" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical" 
+   				  android:gravity="center"
+                  android:layout_weight="1" >
+
+                  <Button
+                      android:id="@+id/rate"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/rate"/>
+		          
+              </LinearLayout>
+          </LinearLayout>
+
         
-      
+      </RelativeLayout>
+     
+    
+    </LinearLayout>
 
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>
